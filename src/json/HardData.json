@@ -1,0 +1,211 @@
+[
+    {
+        "ID": 843,
+        "Title": "Find Secret Word",
+        "Approach": [
+            "Use a counter to track words with no common characters.",
+            "Iterate through guesses and adjust the wordlist based on feedback."
+        ],
+        "Hints": [
+            "Step 1: Create a counter to count how many words share no characters with each other.",
+            "Step 2: Use a guess word from the list that minimizes the count.",
+            "Step 3: Based on the feedback from `master.guess`, narrow down the wordlist by checking which words match the feedback."
+        ]
+    },
+    {
+        "ID": 975,
+        "Title": "Odd Even Jumps",
+        "Approach": [
+            "Use two arrays to track the next higher and lower values for each index.",
+            "Use dynamic programming to calculate reachable positions for both odd and even jumps."
+        ],
+        "Hints": [
+            "Step 1: Use a stack to build the `next_higher` and `next_lower` arrays by iterating through the array sorted by value.",
+            "Step 2: Use dynamic programming to check if the current position can reach the end by alternating odd and even jumps.",
+            "Step 3: For each position, check if you can reach the end using either an odd or even jump."
+        ]
+    },
+    {
+        "ID": 410,
+        "Title": "Split Array Largest Sum",
+        "Approach": [
+            "Use binary search on the possible largest sum of subarrays.",
+            "Check if the array can be split into subarrays with a sum not exceeding the mid value."
+        ],
+        "Hints": [
+            "Step 1: Use binary search to find the smallest possible maximum sum that allows splitting into `m` subarrays.",
+            "Step 2: For each midpoint value, check if it’s valid by splitting the array and ensuring no subarray exceeds the current sum.",
+            "Step 3: Adjust the binary search range based on whether the current sum can accommodate the split."
+        ]
+    },
+    {
+        "ID": 857,
+        "Title": "Minimum Cost to Hire Workers",
+        "Approach": [
+            "Sort the workers based on their wage-to-quality ratio.",
+            "Use a heap to keep track of the top K workers and calculate the minimum cost for each set."
+        ],
+        "Hints": [
+            "Step 1: Sort the workers by the ratio of wage to quality, which allows efficient cost calculation for different groups of workers.",
+            "Step 2: Use a max-heap to track the top K workers by quality. This ensures that the workers with the highest quality are considered while calculating the cost.",
+            "Step 3: For each set of K workers, calculate the total cost by multiplying the ratio by the sum of their qualities.",
+            "Step 4: Update the result to store the minimum cost found while iterating through the workers."
+        ]
+    },
+    {
+        "ID": 642,
+        "Title": "Autocomplete System",
+        "Approach": [
+            "Use a trie-like structure to store the sentences and their frequencies.",
+            "For each input character, navigate through the trie to find possible completions and return the top matches."
+        ],
+        "Hints": [
+            "Step 1: Build a trie to represent the possible sentences, storing each sentence's frequency.",
+            "Step 2: For each character input, traverse the trie and retrieve the sentences that match the input prefix.",
+            "Step 3: Keep track of sentence rankings using a heap, sorting them by frequency for efficient retrieval of the top suggestions.",
+            "Step 4: When the '#' character is entered, store the sentence frequency and reset the current search state."
+        ]
+    },
+    {
+        "ID": 683,
+        "Title": "K Empty Slots",
+        "Approach": [
+            "Simulate the process of flowers blooming, updating the positions dynamically.",
+            "Use a doubly linked list to track the available positions and check for valid slots."
+        ],
+        "Hints": [
+            "Step 1: Initialize a doubly linked list of positions representing the flowerbed, with 'inf' as the initial boundaries.",
+            "Step 2: For each day, update the blooming flower's position and check if there are exactly K empty slots between adjacent flowers.",
+            "Step 3: If a valid slot is found, return the day. Otherwise, continue the simulation.",
+            "Step 4: Ensure to manage the boundaries of the flowerbed properly by updating the neighbors when flowers bloom."
+        ]
+    },
+    {
+        "ID": 248,
+        "Title": "Strobogrammatic Numbers in Range",
+        "Approach": [
+            "Use a breadth-first search (BFS) approach to generate all strobogrammatic numbers up to the maximum length.",
+            "For each generated number, check if it lies within the given range and count it."
+        ],
+        "Hints": [
+            "Step 1: Initialize a queue with the basic strobogrammatic numbers (empty string, '0', '1', '8').",
+            "Step 2: Use BFS to iteratively generate larger strobogrammatic numbers by appending pairs of characters ('6', '9', '1', '0', '8').",
+            "Step 3: For each generated number, check if it lies between the low and high bounds and ensure it doesn't start with '0'.",
+            "Step 4: Count the valid strobogrammatic numbers that satisfy the range condition."
+        ]
+    },
+    {
+        "ID": 489,
+        "Title": "Robot Room Cleaner",
+        "Approach": [
+            "Use depth-first search (DFS) to explore all the cells the robot can clean.",
+            "Track visited cells to ensure the robot doesn't clean the same spot twice."
+        ],
+        "Hints": [
+            "Step 1: Start by cleaning the current cell and marking it as visited.",
+            "Step 2: Explore the four directions (up, down, left, right) using DFS. For each direction, try moving and clean the new cell if it’s unvisited.",
+            "Step 3: When unable to move forward, turn around and backtrack to previous cells.",
+            "Step 4: Ensure the robot uses the `turnLeft` and `turnRight` methods to explore all possible directions from each cell."
+        ]
+    },
+    {
+        "ID": 753,
+        "Title": "Crack Safe",
+        "Approach": [
+            "Generate a De Bruijn sequence to form the smallest string that contains all possible sequences of length n.",
+            "Use a greedy approach to construct the string by appending digits that form a valid next state."
+        ],
+        "Hints": [
+            "Step 1: Construct the initial string by repeating '0' for n-1 characters to set the starting point.",
+            "Step 2: Build a De Bruijn sequence by appending digits from '0' to 'k-1', ensuring that each possible substring of length n appears at least once.",
+            "Step 3: Greedily choose the next digit that completes a new n-length substring, checking if it hasn't been seen before.",
+            "Step 4: Continue this process until all possible sequences have been covered."
+        ]
+    },
+    {
+        "ID": 1153,
+        "Title": "String Transforms Into Another String",
+        "Approach": [
+          "Check if a character mapping from s1 to s2 is consistent.",
+          "Ensure there’s at least one spare character to allow transformation cycles."
+        ],
+        "Hints": [
+          "Step 1: If the strings are already equal, return True.",
+          "Step 2: Build a dictionary mapping each character in s1 to s2.",
+          "Step 3: If a character maps inconsistently (e.g., 'a' → 'b' and 'a' → 'c'), return False.",
+          "Step 4: If all characters map consistently, the transformation is only possible if s2 uses fewer than 26 unique characters (so there's at least one unused character for temp transformations)."
+        ]
+      },
+      {
+        "ID": 736,
+        "Title": "Parse Lisp Expression",
+        "Approach": [
+          "Use a stack to simulate nested expression parsing.",
+          "Maintain variable scopes using a list of dictionaries."
+        ],
+        "Hints": [
+          "Step 1: Tokenize the expression by splitting and handling parentheses.",
+          "Step 2: Maintain a stack `items` for current operations and `scopes` for variable assignments.",
+          "Step 3: For 'let', copy the previous scope and update it with new assignments.",
+          "Step 4: When encountering a closing parenthesis, evaluate the expression (add, mult, or let).",
+          "Step 5: Resolve variables from the current scope before use and return the final computed value."
+        ]
+      },
+      {
+        "ID": 727,
+        "Title": "Minimum Window Subsequence",
+        "Approach": [
+          "Iterate through string S to find windows that match T as a subsequence.",
+          "Use DFS + memoization to find the shortest valid window."
+        ],
+        "Hints": [
+          "Step 1: Start at each character in S that matches the first character of T.",
+          "Step 2: Use a recursive DFS function to find the furthest index where T completes as a subsequence.",
+          "Step 3: Use memoization to avoid recomputation and speed up the search.",
+          "Step 4: Update the result window if a smaller one is found.",
+          "Step 5: Return the smallest valid substring containing T as a subsequence in order."
+        ]
+      },
+      {
+        "ID": 1088,
+        "Title": "Confusing Number II",
+        "Approach": [
+          "Use DFS to generate numbers with valid digits [0,1,6,8,9].",
+          "Count numbers that are confusing (i.e., not equal to their rotated version)."
+        ],
+        "Hints": [
+          "Step 1: Define a `diff()` function to check if a number becomes different after rotation (i.e., it’s a confusing number).",
+          "Step 2: Use DFS to build numbers by appending digits, skipping leading 0s.",
+          "Step 3: If the generated number ≤ N, check if it's confusing and add it to the count.",
+          "Step 4: Optimize edge case for N == 1e9 with precomputed value."
+        ]
+      },
+      {
+        "ID": 308,
+        "Title": "Range Sum Query 2D - Mutable",
+        "Approach": [
+          "Prefix sums are computed row-wise to speed up sum queries.",
+          "Updates modify the row prefix sums accordingly."
+        ],
+        "Hints": [
+          "Step 1: During initialization, compute row-wise prefix sums.",
+          "Step 2: For `update(row, col, val)`, calculate the difference and adjust all elements to the right in the row.",
+          "Step 3: For `sumRegion(row1, col1, row2, col2)`, subtract col1 prefix if needed and sum up all row segments.",
+          "Note: Not optimal for heavy update queries—can be optimized further with Binary Indexed Tree or Segment Tree per row."
+        ]
+      },
+      {
+        "ID": 803,
+        "Title": "Bricks Falling When Hit",
+        "Approach": [
+          "Simulate hits in reverse.",
+          "Use DFS to find stable bricks (connected to top)."
+        ],
+        "Hints": [
+          "Step 1: For each hit, mark the cell as 'to be removed' by subtracting 1.",
+          "Step 2: After all hits, identify bricks connected to the top row using DFS (mark them with 2).",
+          "Step 3: In reverse, add each brick back and check if it connects to the top or any stable brick.",
+          "Step 4: If connected, use DFS to count how many bricks get stabilized (excluding the one just added)."
+        ]
+      }
+    ]

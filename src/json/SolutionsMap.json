@@ -1,0 +1,227 @@
+[
+  {
+    "ID": 929,
+    "Title": "Unique Email Addresses",
+    "SolutionPath": "929.py"
+  },
+  {
+    "ID": 482,
+    "Title": "License Key Formatting",
+    "SolutionPath": "482.py"
+  },
+  {
+    "ID": 1,
+    "Title": "Two Sum",
+    "SolutionPath": "1.py"
+  },
+  {
+    "ID": 844,
+    "Title": "Backspace String Compare",
+    "SolutionPath": "844.py"
+  },
+  {
+    "ID": 299,
+    "Title": "Bulls and Cows",
+    "SolutionPath": "299.py"
+  },
+  {
+    "ID": 359,
+    "Title": "Logger Rate Limiter",
+    "SolutionPath": "359.py"
+  },
+  {
+    "ID": 1170,
+    "Title": "Compare Strings by Frequency of the Smallest Character",
+    "SolutionPath": "1170.py"
+  },
+  {
+    "ID": 205,
+    "Title": "Isomorphic Strings",
+    "SolutionPath": "205.py"
+  },
+  {
+    "ID": 734,
+    "Title": "Sentence Similarity",
+    "SolutionPath": "734.py"
+  },
+  {
+    "ID": 849,
+    "Title": "Maximize Distance to Closest Person",
+    "SolutionPath": "849.py"
+  },
+  {
+    "ID": 346,
+    "Title": "Moving Average from Data Stream",
+    "SolutionPath": "346.py"
+  },
+  {
+    "ID": 475,
+    "Title": "Heaters",
+    "SolutionPath": "475.py"
+  },
+  {
+    "ID": 246,
+    "Title": "Strobogrammatic Number",
+    "SolutionPath": "246.py"
+  },
+  {
+    "ID": 686,
+    "Title": "Repeated String Match",
+    "SolutionPath": "686.py"
+  },
+  {
+    "ID": 914,
+    "Title": "X of a Kind in a Deck of Cards",
+    "SolutionPath": "914.py"
+  },
+  {
+    "ID": 904,
+    "Title": "Fruit Into Baskets",
+    "SolutionPath": "904.py"
+  },
+  {
+    "ID": 1007,
+    "Title": "Minimum Domino Rotations For Equal Row",
+    "SolutionPath": "1007.py"
+  },
+  {
+    "ID": 681,
+    "Title": "Next Closest Time",
+    "SolutionPath": "681.py"
+  },
+  {
+    "ID": 399,
+    "Title": "Evaluate Division",
+    "SolutionPath": "399.py"
+  },
+  {
+    "ID": 159,
+    "Title": "Longest Substring with At Most Two Distinct Characters",
+    "SolutionPath": "159.py"
+  },
+  {
+    "ID": 222,
+    "Title": "Count Complete Tree Nodes",
+    "SolutionPath": "222.py"
+  },
+  {
+    "ID": 947,
+    "Title": "Most Stones Removed with Same Row or Column",
+    "SolutionPath": "947.py"
+  },
+  {
+    "ID": 809,
+    "Title": "Expressive Words",
+    "SolutionPath": "809.py"
+  },
+  {
+    "ID": 1057,
+    "Title": "Campus Bikes",
+    "SolutionPath": "1057.py"
+  },
+  {
+    "ID": 833,
+    "Title": "Find And Replace in String",
+    "SolutionPath": "833.py"
+  },
+  {
+    "ID": 939,
+    "Title": "Minimum Area Rectangle",
+    "SolutionPath": "939.py"
+  },
+  {
+    "ID": 1055,
+    "Title": "Shortest Way to Form String",
+    "SolutionPath": "1055.py"
+  },
+  {
+    "ID": 777,
+    "Title": "Swap Adjacent in LR String",
+    "SolutionPath": "777.py"
+  },
+  {
+    "ID": 659,
+    "Title": "Split Array into Consecutive Subsequences",
+    "SolutionPath": "659.py"
+  },
+  {
+    "ID": 1110,
+    "Title": "Delete Nodes And Return Forest",
+    "SolutionPath": "1110.py"
+  },
+  {
+    "ID": 843,
+    "Title": "Guess the Word",
+    "SolutionPath": "843.py"
+  },
+  {
+    "ID": 975,
+    "Title": "Odd Even Jump",
+    "SolutionPath": "975.py"
+  },
+  {
+    "ID": 410,
+    "Title": "Split Array Largest Sum",
+    "SolutionPath": "410.py"
+  },
+  {
+    "ID": 857,
+    "Title": "Minimum Cost to Hire K Workers",
+    "SolutionPath": "857.py"
+  },
+  {
+    "ID": 642,
+    "Title": "Design Search Autocomplete System",
+    "SolutionPath": "642.py"
+  },
+  {
+    "ID": 683,
+    "Title": "K Empty Slots",
+    "SolutionPath": "683.py"
+  },
+  {
+    "ID": 248,
+    "Title": "Strobogrammatic Number III",
+    "SolutionPath": "248.py"
+  },
+  {
+    "ID": 489,
+    "Title": "Robot Room Cleaner",
+    "SolutionPath": "489.py"
+  },
+  {
+    "ID": 753,
+    "Title": "Cracking the Safe",
+    "SolutionPath": "753.py"
+  },
+  {
+    "ID": 1153,
+    "Title": "String Transforms Into Another String",
+    "SolutionPath": "1153.py"
+  },
+  {
+    "ID": 736,
+    "Title": "Parse Lisp Expression",
+    "SolutionPath": "736.py"
+  },
+  {
+    "ID": 727,
+    "Title": "Minimum Window Subsequence",
+    "SolutionPath": "727.py"
+  },
+  {
+    "ID": 1088,
+    "Title": "Confusing Number II",
+    "SolutionPath": "1088.py"
+  },
+  {
+    "ID": 308,
+    "Title": "Range Sum Query 2D - Mutable",
+    "SolutionPath": "308.py"
+  },
+  {
+    "ID": 803,
+    "Title": "Bricks Falling When Hit",
+    "SolutionPath": "803.py"
+  }
+]

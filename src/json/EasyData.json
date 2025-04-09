@@ -1,0 +1,206 @@
+[
+    {
+        "ID": 929,
+        "Title": "Unique Email Addresses",
+        "Approach": [
+            "Separate the local and domain parts of the email.",
+            "Modify the local part by removing '.' and ignoring everything after '+'."
+        ],
+        "Hints": [
+            "Step 1: Split each email by the '@' character to isolate the local and domain parts.",
+            "Step 2: Clean up the local part by removing '.' and ignoring any characters after the first '+' symbol.",
+            "Step 3: Store the cleaned email in a set to ensure uniqueness.",
+            "Step 4: Return the size of the set to get the count of distinct email addresses."
+        ]
+    },
+    {
+        "ID": 482,
+        "Title": "License Key Formatting",
+        "Approach": [
+            "Clean the string by removing dashes and converting it to uppercase.",
+            "Group the string into parts of size K, then adjust the format accordingly."
+        ],
+        "Hints": [
+            "Step 1: Remove any existing dashes from the input string.",
+            "Step 2: Convert the string to uppercase for uniformity.",
+            "Step 3: Reverse the string to facilitate grouping characters.",
+            "Step 4: Break the string into chunks of size K and then reassemble it with dashes.",
+            "Step 5: Reverse the result to get the final formatted key."
+        ]
+    },
+    {
+        "ID": 1,
+        "Title": "Two Sum",
+        "Approach": [
+            "Utilize a hash map to track visited numbers and their indices.",
+            "Check for the complement of the current number as you iterate."
+        ],
+        "Hints": [
+            "Step 1: Initialize an empty hash map to store each number and its index.",
+            "Step 2: Loop through the numbers and for each number, check if its complement (target - current number) is already in the map.",
+            "Step 3: If found, return the indices of the current number and its complement.",
+            "Step 4: If not found, store the current number in the map for future lookups."
+        ]
+    },
+    
+    {
+        "ID": 844,
+        "Title": "Backspace String Compare",
+        "Approach": [
+            "Simulate the backspace process by iterating through the string.",
+            "Use a list to handle characters and apply the backspace operation when encountering a '#'."
+        ],
+        "Hints": [
+            "Step 1: Initialize an empty list to hold the characters as you process the string.",
+            "Step 2: For each character, if it is a '#', remove the last character from the list if possible.",
+            "Step 3: If it is not '#', append the character to the list.",
+            "Step 4: After processing both strings, compare the resulting lists to determine if the strings are equal."
+        ]
+    },
+    {
+        "ID": 299,
+        "Title": "Bulls and Cows",
+        "Approach": [
+            "Track matching characters (bulls) and non-matching characters (cows) separately.",
+            "Use two dictionaries to count occurrences and compare bulls and cows."
+        ],
+        "Hints": [
+            "Step 1: Initialize two dictionaries to track occurrences of characters in both the secret and guess strings.",
+            "Step 2: Iterate through the strings, counting exact matches (bulls).",
+            "Step 3: For non-matching characters, update counts for bulls and cows based on character occurrences.",
+            "Step 4: Format the result as a string showing the number of bulls and cows."
+        ]
+    },
+    {
+        "ID": 359,
+        "Title": "Logger Rate Limiter",
+        "Approach": [
+            "Store the timestamp of each message in a dictionary.",
+            "Check if the message can be printed based on the 10-second window condition."
+        ],
+        "Hints": [
+            "Step 1: Use a dictionary to map messages to their last printed timestamp.",
+            "Step 2: For each new message, check if it has been printed within the last 10 seconds.",
+            "Step 3: If it has been printed within the 10-second window, return False. Otherwise, return True and update the timestamp."
+        ]
+    },
+    {
+        "ID": 1170,
+        "Title": "Compare Strings by Frequency of the Smallest Character",
+        "Approach": [
+            "Count the frequency of the smallest character in each word and query.",
+            "Use binary search to efficiently compare the frequency counts between the words and queries."
+        ],
+        "Hints": [
+            "Step 1: For each word, calculate the frequency of its smallest character and store the results in a sorted list.",
+            "Step 2: For each query, calculate the frequency of its smallest character.",
+            "Step 3: Use binary search to find how many words have a greater frequency than the current query."
+        ]
+    },
+    {
+        "ID": 205,
+        "Title": "Isomorphic Strings",
+        "Approach": [
+            "Use a dictionary to map characters from one string to another.",
+            "Check if characters from both strings can be mapped one-to-one."
+        ],
+        "Hints": [
+            "Step 1: If the strings have different lengths, immediately return False.",
+            "Step 2: Initialize an empty dictionary to store mappings between characters of the two strings.",
+            "Step 3: For each character, check if it already has a mapping. If not, add the mapping.",
+            "Step 4: If any character violates the one-to-one mapping condition, return False."
+        ]
+    },
+    {
+        "ID": 734,
+        "Title": "Sentence Similarity",
+        "Approach": [
+            "Build a similarity graph using a dictionary of sets for word pairs.",
+            "Check if corresponding words in both sentences are either equal or connected by the similarity graph."
+        ],
+        "Hints": [
+            "Step 1: Create a dictionary of sets to store word pairs that are considered similar.",
+            "Step 2: Populate the dictionary with the provided pairs of similar words.",
+            "Step 3: Ensure both sentences have the same length, otherwise return False.",
+            "Step 4: Check each pair of words from both sentences, verifying if they are equal or connected via the similarity dictionary."
+        ]
+    },
+    {
+        "ID": 849,
+        "Title": "Maximize Distance to Closest Person",
+        "Approach": [
+            "Use two passes: one from left to right and another from right to left to calculate distances.",
+            "Keep track of the maximum distance by comparing the left and right distances for empty seats."
+        ],
+        "Hints": [
+            "Step 1: Traverse the seats from left to right and calculate the distance to the nearest occupied seat.",
+            "Step 2: Traverse the seats from right to left and update the distance for each empty seat.",
+            "Step 3: Return the maximum distance found."
+        ]
+    },
+    {
+        "ID": 346,
+        "Title": "Moving Average from Data Stream",
+        "Approach": [
+            "Use a deque with a fixed size to store the latest values.",
+            "Efficiently calculate the moving average by summing up the elements in the deque."
+        ],
+        "Hints": [
+            "Step 1: Initialize a deque with a maximum size to store the last 'size' values.",
+            "Step 2: For each new value, append it to the deque and remove the oldest value if necessary.",
+            "Step 3: Compute the moving average by summing the elements in the deque and dividing by its length."
+        ]
+    },
+    {
+        "ID": 475,
+        "Title": "Heaters",
+        "Approach": [
+            "Sort the heater positions to allow binary search for the closest heater to each house.",
+            "For each house, calculate the closest distance to a heater and keep track of the maximum radius."
+        ],
+        "Hints": [
+            "Step 1: Sort the list of heaters to efficiently find the closest heater using binary search.",
+            "Step 2: For each house, determine the closest heater by checking the left and right heater positions.",
+            "Step 3: Return the maximum radius needed to cover all houses."
+        ]
+    },
+    {
+        "ID": 246,
+        "Title": "Strobogrammatic Number",
+        "Approach": [
+            "Check each character in the number and its mirrored counterpart.",
+            "Ensure the pairs of characters form valid strobogrammatic pairs."
+        ],
+        "Hints": [
+            "Step 1: Iterate over half of the string and compare each character with its mirrored counterpart.",
+            "Step 2: Ensure the character pairs are valid strobogrammatic pairs such as 88, 69, etc.",
+            "Step 3: Return True if all pairs are valid, otherwise return False."
+        ]
+    },
+    {
+        "ID": 686,
+        "Title": "Repeated String Match",
+        "Approach": [
+            "Repeat string A multiple times and check if B is a substring.",
+            "Calculate the minimum number of repetitions needed for B to be contained in A."
+        ],
+        "Hints": [
+            "Step 1: Calculate the upper bound for repetitions of A based on the length of B.",
+            "Step 2: Repeat string A and check if B becomes a substring.",
+            "Step 3: Return the number of repetitions or -1 if B is not found."
+        ]
+    },
+    {
+        "ID": 914,
+        "Title": "X of a Kind in a Deck of Cards",
+        "Approach": [
+            "Count the frequency of each card in the deck.",
+            "Check if the greatest common divisor (GCD) of all frequencies is greater than 1."
+        ],
+        "Hints": [
+            "Step 1: Count the frequency of each card using a counter.",
+            "Step 2: Calculate the GCD of all the frequencies.",
+            "Step 3: Return True if the GCD is greater than 1, otherwise return False."
+        ]
+    }
+]

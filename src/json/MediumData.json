@@ -1,0 +1,208 @@
+[
+    {
+        "ID": 904,
+        "Title": "Fruit Into Baskets",
+        "Approach": [
+            "Use a sliding window approach to manage a range of trees.",
+            "Keep track of the last seen positions of each fruit type to adjust the window efficiently."
+        ],
+        "Hints": [
+            "Step 1: Initialize a sliding window with two pointers (i and j) to represent the current range of trees.",
+            "Step 2: Use a dictionary to store the counts of each fruit type in the window.",
+            "Step 3: Expand the window by moving j and adjust the window by moving i if more than two types of fruits are in the window.",
+            "Step 4: Keep track of the maximum window size as you iterate through the tree list."
+        ]
+    },
+    {
+        "ID": 1007,
+        "Title": "Minimum Domino Rotations For Equal Row",
+        "Approach": [
+            "Try to make all dominoes in a row have the same number by rotating them.",
+            "Check the possibility for both the first domino in row A and row B as potential candidates."
+        ],
+        "Hints": [
+            "Step 1: Check if it's possible to make all elements in A and B equal to the first element in A or B.",
+            "Step 2: For each candidate, count how many rotations are needed to make the entire row match that candidate.",
+            "Step 3: If it’s not possible for a candidate, try the other number from A[0] or B[0].",
+            "Step 4: Return the minimum number of rotations or -1 if it’s not possible to make both rows the same."
+        ]
+    },
+    {
+        "ID": 681,
+        "Title": "Next Closest Time",
+        "Approach": [
+            "Generate possible times by rearranging the digits of the given time.",
+            "Find the next closest time that is greater than the current time."
+        ],
+        "Hints": [
+            "Step 1: Extract all the unique digits from the given time and sort them.",
+            "Step 2: For each position in the time, try to find the next smallest valid digit.",
+            "Step 3: Handle the edge cases where no valid next time exists and return the smallest possible time.",
+            "Step 4: Return the result by reconstructing the time string from the new digits."
+        ]
+    },
+    {
+        "ID": 399,
+        "Title": "Evaluate Division",
+        "Approach": [
+            "Use Depth First Search (DFS) to explore the graph formed by equations.",
+            "Store results in a dictionary for direct access during queries."
+        ],
+        "Hints": [
+            "Step 1: Build an undirected graph where each equation is an edge and the corresponding value is the weight.",
+            "Step 2: Perform DFS for each query, calculating the result as you traverse the graph.",
+            "Step 3: Store the results of each DFS to avoid redundant computations.",
+            "Step 4: Return the result for each query if a path exists, otherwise return -1."
+        ]
+    },
+    {
+        "ID": 159,
+        "Title": "Longest Substring with At Most Two Distinct Characters",
+        "Approach": [
+            "Use the sliding window technique to maintain a window with at most two distinct characters.",
+            "Use a dictionary to keep track of character frequencies and adjust the window accordingly."
+        ],
+        "Hints": [
+            "Step 1: Use two pointers (start and end) to represent the current window.",
+            "Step 2: Expand the window by moving the end pointer and track the number of distinct characters using a dictionary.",
+            "Step 3: If the window contains more than two distinct characters, shrink it by moving the start pointer.",
+            "Step 4: Keep track of the maximum length of valid windows as you iterate through the string."
+        ]
+    },
+    {
+        "ID": 222,
+        "Title": "Count Complete Tree Nodes",
+        "Approach": [
+            "Use a recursive approach to compute the depth of the left and right subtrees.",
+            "Leverage the properties of a complete binary tree to calculate the number of nodes more efficiently."
+        ],
+        "Hints": [
+            "Step 1: Compute the depth of the left and right subtrees of the current node.",
+            "Step 2: If the depths are equal, the left subtree is complete, and you can calculate the number of nodes in it directly.",
+            "Step 3: If the depths are unequal, the right subtree is complete, and you calculate the nodes in the left subtree recursively.",
+            "Step 4: Use the depth information to decide whether to count the left or right subtree."
+        ]
+    },
+    {
+        "ID": 947,
+        "Title": "Remove Stones to Minimize the Total",
+        "Approach": [
+            "Use Depth First Search (DFS) to find the connected components of stones.",
+            "Track the rows and columns of the stones to group them into islands."
+        ],
+        "Hints": [
+            "Step 1: Create a set of all stones to keep track of which stones are still available to process.",
+            "Step 2: Build mappings of rows and columns to quickly access neighboring stones.",
+            "Step 3: For each stone, perform DFS to explore all stones in its connected component (island).",
+            "Step 4: After exploring each island, count how many islands were found and subtract this number from the total number of stones to find the minimum number of stones to remove."
+        ]
+    },
+    {
+        "ID": 809,
+        "Title": "Expressive Words",
+        "Approach": [
+            "Group consecutive identical characters in both the string S and the words.",
+            "Check if a word can match the pattern of S by ensuring the lengths of consecutive character groups are valid."
+        ],
+        "Hints": [
+            "Step 1: Create a guide for S that stores characters and their consecutive counts.",
+            "Step 2: For each word, compare it to the guide to see if it can be transformed into S by stretching or keeping characters the same.",
+            "Step 3: If a word satisfies the conditions, increment the count of expressive words."
+        ]
+    },
+    {
+        "ID": 1057,
+        "Title": "Assign Bikes to Workers",
+        "Approach": [
+            "Calculate the Manhattan distance between each worker and bike, then use a greedy approach to assign the closest available bike to each worker.",
+            "Sort the distances to make the assignment more efficient."
+        ],
+        "Hints": [
+            "Step 1: Calculate the Manhattan distance between all pairs of workers and bikes.",
+            "Step 2: Sort the pairs based on the distance.",
+            "Step 3: Assign each worker to the closest available bike and keep track of which bikes have been used.",
+            "Step 4: Stop once all workers have been assigned a bike."
+        ]
+    },
+    
+    {
+        "ID": 833,
+        "Title": "Find and Replace in String",
+        "Approach": [
+            "Create a dictionary to map the indexes where replacements should occur.",
+            "Iterate through the string, and when a replacement is needed, substitute the target string."
+        ],
+        "Hints": [
+            "Step 1: Build a dictionary mapping indexes to the pairs of source and target strings.",
+            "Step 2: Traverse the string, checking if a replacement needs to be made at each index.",
+            "Step 3: If a replacement is required, append the target string to the result. Otherwise, append the current character.",
+            "Step 4: Handle the length of replacements properly to skip over replaced parts."
+        ]
+    },
+    {
+        "ID": 939,
+        "Title": "Minimum Area Rectangle",
+        "Approach": [
+            "Use a dictionary to track the x-coordinates for each y-coordinate.",
+            "Iterate through the points, checking for pairs that form a rectangle and calculating the area."
+        ],
+        "Hints": [
+            "Step 1: Store each point in a dictionary mapping x-coordinates to y-coordinates.",
+            "Step 2: For each new point, check for previously seen points that could form a rectangle with the current one.",
+            "Step 3: If a valid rectangle is found, calculate the area and update the minimum area if needed.",
+            "Step 4: Return the minimum area found, or 0 if no rectangle was found."
+        ]
+    },
+    {
+        "ID": 1055,
+        "Title": "Shortest Way to Form String",
+        "Approach": [
+            "Iterate through the target string and try to find each character in the source string in sequence.",
+            "If a character can't be found in the remaining part of the source string, restart the search from the beginning."
+        ],
+        "Hints": [
+            "Step 1: Iterate through the characters of the target string.",
+            "Step 2: For each character, find it in the source string. If it can't be found, start over from the beginning of the source string.",
+            "Step 3: Count how many times the source string must be used to match the target string."
+        ]
+    },
+    {
+        "ID": 777,
+        "Title": "Swap Adjacent in LR String",
+        "Approach": [
+            "Remove the 'X' characters and check if the remaining characters in the start and end strings match.",
+            "Ensure that for all 'L' characters, the positions in the start string are greater than or equal to the positions in the end string, and for 'R' characters, the positions in the start string are less than or equal to the positions in the end string."
+        ],
+        "Hints": [
+            "Step 1: Remove 'X' characters from both the start and end strings.",
+            "Step 2: Check if the non-'X' parts of the start and end strings are identical.",
+            "Step 3: Ensure that the positions of 'L' and 'R' in the start string can move to match the positions in the end string according to the rules of the problem."
+        ]
+    },
+    {
+        "ID": 659,
+        "Title": "Split Array into Consecutive Subsequences",
+        "Approach": [
+            "Use a heap and a dictionary to track the lengths of subsequences and check if a number can extend an existing subsequence or start a new one.",
+            "Ensure that subsequences are extended appropriately and no number is left unmatched."
+        ],
+        "Hints": [
+            "Step 1: Track the frequency of each number in the input array.",
+            "Step 2: Use a heap to manage subsequences and ensure that a number can either extend an existing subsequence or form a new subsequence.",
+            "Step 3: Ensure that the subsequences are extended according to the rules, and return False if it's not possible."
+        ]
+    },
+    {
+        "ID": 1110,
+        "Title": "Delete Nodes And Return Forest",
+        "Approach": [
+            "Perform a depth-first search (DFS) on the binary tree to find the nodes to delete and remove them.",
+            "For each deleted node, add its children to the result list if they are not also deleted."
+        ],
+        "Hints": [
+            "Step 1: Perform DFS from the root of the tree.",
+            "Step 2: If a node needs to be deleted, ensure its children are added to the result list.",
+            "Step 3: Handle the parent-child relationships properly, updating parent pointers when nodes are deleted."
+        ]
+    }
+]

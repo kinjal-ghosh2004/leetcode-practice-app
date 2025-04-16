@@ -1,55 +1,55 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { questions } from "../data/questions"; // Import the questions data
+import { questions } from "../data/questions";
 
 function Quiz() {
   const location = useLocation();
   const navigate = useNavigate();
-
   const difficulty = location.state?.difficulty;
+
+  const [quizQuestions, setQuizQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [userAnswers, setUserAnswers] = useState([]);
-  const [quizQuestions, setQuizQuestions] = useState([]);
 
   useEffect(() => {
     if (!difficulty) {
       navigate("/");
       return;
     }
-
-    setQuizQuestions(questions[difficulty]);
-
+    setQuizQuestions(questions[difficulty] || []);
   }, [difficulty, navigate]);
 
   const handleNextQuestion = () => {
-    if (selectedOption !== null) {
-      const updatedAnswers = [...userAnswers, selectedOption];
-      setUserAnswers(updatedAnswers);
-      setSelectedOption(null);
+    if (selectedOption === null) return;
 
-      if (currentQuestionIndex + 1 < quizQuestions.length) {
-        setCurrentQuestionIndex(currentQuestionIndex + 1);
-      } else {
-        const score = updatedAnswers.reduce((acc, answer, index) => {
-          if (answer === quizQuestions[index].correct) return acc + 1;
-          return acc;
-        }, 0);
+    const updatedAnswers = [...userAnswers, selectedOption];
+    setUserAnswers(updatedAnswers);
+    setSelectedOption(null);
 
-        // Passing all required data in state
-        navigate("/report", {
-          state: {
-            score,
-            totalQuestions: quizQuestions.length,
-            userAnswers: updatedAnswers,
-            difficulty, // Ensure difficulty is passed here
-          },
-        });
-      }
+    const isLastQuestion = currentQuestionIndex + 1 === quizQuestions.length;
+
+    if (isLastQuestion) {
+      const score = updatedAnswers.reduce((acc, answer, index) => (
+        answer === quizQuestions[index].correct ? acc + 1 : acc
+      ), 0);
+
+      navigate("/report", {
+        state: {
+          score,
+          totalQuestions: quizQuestions.length,
+          userAnswers: updatedAnswers,
+          difficulty,
+        },
+      });
+    } else {
+      setCurrentQuestionIndex(prev => prev + 1);
     }
   };
 
-  if (!quizQuestions.length) return <p className="text-center mt-10">Loading quiz...</p>;
+  if (!quizQuestions.length) {
+    return <p className="text-center mt-10">Loading quiz...</p>;
+  }
 
   const currentQuestion = quizQuestions[currentQuestionIndex];
 

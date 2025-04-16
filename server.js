@@ -8,10 +8,10 @@ app.use(cors());
 app.use(express.static("public")); // serves static solution files
 
 // JSON data
-const easy = require("./json/EasyData.json");
-const medium = require("./json/MediumData.json");
-const hard = require("./json/HardData.json");
-const solutionMap = require("./json/SolutionsMap.json");
+const easy = require("./src/json/EasyData.json");
+const medium = require("./src/json/MediumData.json");
+const hard = require("./src/json/HardData.json");
+const solutionMap = require("./src/json/SolutionsMap.json");
 
 // Returns question list with embedded solution text
 const getQuestionsWithSolutions = (questions) =>

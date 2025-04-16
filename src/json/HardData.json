@@ -152,49 +152,6 @@
         ]
       },
       {
-        "ID": 727,
-        "Title": "Minimum Window Subsequence",
-        "Approach": [
-          "Iterate through string S to find windows that match T as a subsequence.",
-          "Use DFS + memoization to find the shortest valid window."
-        ],
-        "Hints": [
-          "Step 1: Start at each character in S that matches the first character of T.",
-          "Step 2: Use a recursive DFS function to find the furthest index where T completes as a subsequence.",
-          "Step 3: Use memoization to avoid recomputation and speed up the search.",
-          "Step 4: Update the result window if a smaller one is found.",
-          "Step 5: Return the smallest valid substring containing T as a subsequence in order."
-        ]
-      },
-      {
-        "ID": 1088,
-        "Title": "Confusing Number II",
-        "Approach": [
-          "Use DFS to generate numbers with valid digits [0,1,6,8,9].",
-          "Count numbers that are confusing (i.e., not equal to their rotated version)."
-        ],
-        "Hints": [
-          "Step 1: Define a `diff()` function to check if a number becomes different after rotation (i.e., it’s a confusing number).",
-          "Step 2: Use DFS to build numbers by appending digits, skipping leading 0s.",
-          "Step 3: If the generated number ≤ N, check if it's confusing and add it to the count.",
-          "Step 4: Optimize edge case for N == 1e9 with precomputed value."
-        ]
-      },
-      {
-        "ID": 308,
-        "Title": "Range Sum Query 2D - Mutable",
-        "Approach": [
-          "Prefix sums are computed row-wise to speed up sum queries.",
-          "Updates modify the row prefix sums accordingly."
-        ],
-        "Hints": [
-          "Step 1: During initialization, compute row-wise prefix sums.",
-          "Step 2: For `update(row, col, val)`, calculate the difference and adjust all elements to the right in the row.",
-          "Step 3: For `sumRegion(row1, col1, row2, col2)`, subtract col1 prefix if needed and sum up all row segments.",
-          "Note: Not optimal for heavy update queries—can be optimized further with Binary Indexed Tree or Segment Tree per row."
-        ]
-      },
-      {
         "ID": 803,
         "Title": "Bricks Falling When Hit",
         "Approach": [

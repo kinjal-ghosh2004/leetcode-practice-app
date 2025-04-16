@@ -56,20 +56,6 @@
         ]
     },
     {
-        "ID": 159,
-        "Title": "Longest Substring with At Most Two Distinct Characters",
-        "Approach": [
-            "Use the sliding window technique to maintain a window with at most two distinct characters.",
-            "Use a dictionary to keep track of character frequencies and adjust the window accordingly."
-        ],
-        "Hints": [
-            "Step 1: Use two pointers (start and end) to represent the current window.",
-            "Step 2: Expand the window by moving the end pointer and track the number of distinct characters using a dictionary.",
-            "Step 3: If the window contains more than two distinct characters, shrink it by moving the start pointer.",
-            "Step 4: Keep track of the maximum length of valid windows as you iterate through the string."
-        ]
-    },
-    {
         "ID": 222,
         "Title": "Count Complete Tree Nodes",
         "Approach": [
@@ -109,22 +95,7 @@
             "Step 2: For each word, compare it to the guide to see if it can be transformed into S by stretching or keeping characters the same.",
             "Step 3: If a word satisfies the conditions, increment the count of expressive words."
         ]
-    },
-    {
-        "ID": 1057,
-        "Title": "Assign Bikes to Workers",
-        "Approach": [
-            "Calculate the Manhattan distance between each worker and bike, then use a greedy approach to assign the closest available bike to each worker.",
-            "Sort the distances to make the assignment more efficient."
-        ],
-        "Hints": [
-            "Step 1: Calculate the Manhattan distance between all pairs of workers and bikes.",
-            "Step 2: Sort the pairs based on the distance.",
-            "Step 3: Assign each worker to the closest available bike and keep track of which bikes have been used.",
-            "Step 4: Stop once all workers have been assigned a bike."
-        ]
-    },
-    
+    },    
     {
         "ID": 833,
         "Title": "Find and Replace in String",
@@ -151,19 +122,6 @@
             "Step 2: For each new point, check for previously seen points that could form a rectangle with the current one.",
             "Step 3: If a valid rectangle is found, calculate the area and update the minimum area if needed.",
             "Step 4: Return the minimum area found, or 0 if no rectangle was found."
-        ]
-    },
-    {
-        "ID": 1055,
-        "Title": "Shortest Way to Form String",
-        "Approach": [
-            "Iterate through the target string and try to find each character in the source string in sequence.",
-            "If a character can't be found in the remaining part of the source string, restart the search from the beginning."
-        ],
-        "Hints": [
-            "Step 1: Iterate through the characters of the target string.",
-            "Step 2: For each character, find it in the source string. If it can't be found, start over from the beginning of the source string.",
-            "Step 3: Count how many times the source string must be used to match the target string."
         ]
     },
     {

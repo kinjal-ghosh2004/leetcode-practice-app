@@ -112,20 +112,6 @@
         ]
     },
     {
-        "ID": 734,
-        "Title": "Sentence Similarity",
-        "Approach": [
-            "Build a similarity graph using a dictionary of sets for word pairs.",
-            "Check if corresponding words in both sentences are either equal or connected by the similarity graph."
-        ],
-        "Hints": [
-            "Step 1: Create a dictionary of sets to store word pairs that are considered similar.",
-            "Step 2: Populate the dictionary with the provided pairs of similar words.",
-            "Step 3: Ensure both sentences have the same length, otherwise return False.",
-            "Step 4: Check each pair of words from both sentences, verifying if they are equal or connected via the similarity dictionary."
-        ]
-    },
-    {
         "ID": 849,
         "Title": "Maximize Distance to Closest Person",
         "Approach": [
@@ -139,19 +125,6 @@
         ]
     },
     {
-        "ID": 346,
-        "Title": "Moving Average from Data Stream",
-        "Approach": [
-            "Use a deque with a fixed size to store the latest values.",
-            "Efficiently calculate the moving average by summing up the elements in the deque."
-        ],
-        "Hints": [
-            "Step 1: Initialize a deque with a maximum size to store the last 'size' values.",
-            "Step 2: For each new value, append it to the deque and remove the oldest value if necessary.",
-            "Step 3: Compute the moving average by summing the elements in the deque and dividing by its length."
-        ]
-    },
-    {
         "ID": 475,
         "Title": "Heaters",
         "Approach": [
@@ -162,19 +135,6 @@
             "Step 1: Sort the list of heaters to efficiently find the closest heater using binary search.",
             "Step 2: For each house, determine the closest heater by checking the left and right heater positions.",
             "Step 3: Return the maximum radius needed to cover all houses."
-        ]
-    },
-    {
-        "ID": 246,
-        "Title": "Strobogrammatic Number",
-        "Approach": [
-            "Check each character in the number and its mirrored counterpart.",
-            "Ensure the pairs of characters form valid strobogrammatic pairs."
-        ],
-        "Hints": [
-            "Step 1: Iterate over half of the string and compare each character with its mirrored counterpart.",
-            "Step 2: Ensure the character pairs are valid strobogrammatic pairs such as 88, 69, etc.",
-            "Step 3: Return True if all pairs are valid, otherwise return False."
         ]
     },
     {

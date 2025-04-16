@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import easyData from "../json/EasyData.json";
 import mediumData from "../json/MediumData.json";
 import hardData from "../json/HardData.json";
@@ -11,9 +12,12 @@ const findSolution = (question) =>
   );
 
 const QuestionGenerator = () => {
-  const [difficulty, setDifficulty] = useState("Easy");
+  const location = useLocation();
+  const defaultDiff = location.state?.difficulty || "Easy";
+  const [difficulty, setDifficulty] = useState(defaultDiff);
   const [question, setQuestion] = useState(null);
   const [solutionPath, setSolutionPath] = useState("");
+  const [isPremiumUser, setIsPremiumUser] = useState(false); // toggle for premium
 
   const dataMap = {
     Easy: easyData,
@@ -23,17 +27,45 @@ const QuestionGenerator = () => {
 
   const generateQuestion = () => {
     const questions = dataMap[difficulty];
-    const randomIndex = Math.floor(Math.random() * questions.length);
-    const selected = questions[randomIndex];
+    // Filter out premium-only questions if not a premium user
+    const filtered = isPremiumUser
+      ? questions
+      : questions.filter((q) => {
+          const sol = findSolution(q);
+          return sol?.Premium !== "yes";
+        });
+
+    if (filtered.length === 0) {
+      alert("No available questions in this category for free users!");
+      return;
+    }
+
+    const randomIndex = Math.floor(Math.random() * filtered.length);
+    const selected = filtered[randomIndex];
     setQuestion(selected);
 
     const solMeta = findSolution(selected);
     setSolutionPath(solMeta ? solMeta.SolutionPath : "");
   };
 
+  const currentSolution = question ? findSolution(question) : null;
+
   return (
     <div className="max-w-2xl mx-auto mt-10 p-6 bg-white rounded-2xl shadow-lg">
-      <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Leetcode Practice</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">
+        Leetcode Practice
+      </h1>
+
+      {/* Premium Toggle */}
+      <div className="flex justify-center items-center mb-4 gap-2">
+        <label className="text-gray-700 font-medium">Are you subscribed to LeetCode Premium?</label>
+        <input
+          type="checkbox"
+          checked={isPremiumUser}
+          onChange={(e) => setIsPremiumUser(e.target.checked)}
+          className="toggle toggle-primary"
+        />
+      </div>
 
       {/* Difficulty Buttons */}
       <div className="flex justify-center mb-6">
@@ -69,7 +101,19 @@ const QuestionGenerator = () => {
       {/* Display Question */}
       {question && (
         <div className="mt-6 p-5 border rounded-xl bg-gray-50 shadow-sm">
-          <h2 className="text-2xl font-semibold mb-1">{question.Title}</h2>
+          <div className="flex items-center justify-between mb-2">
+            <h2 className="text-2xl font-semibold">{question.Title}</h2>
+            {currentSolution?.Link && (
+              <a
+                href={currentSolution.Link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 underline text-sm hover:text-blue-800"
+              >
+                Link to Question
+              </a>
+            )}
+          </div>
 
           <div className="mb-3">
             <h3 className="text-lg font-medium text-gray-700">Approach:</h3>
